@@ -12,6 +12,7 @@ def home():
 def analyze():
     try:
         image_data = request.get_data(cache=False)
+        print(f"Got {len(image_data)} bytes")
         llm_response = get_llm_response(image_data)
         response_data = {
             "text": llm_response
